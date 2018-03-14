@@ -12,8 +12,13 @@ my_game = Game.new(Player.new(player_name), HiddenWord.new(hidden_word))
 puts "Hello #{player_name}! Here's a word/phrase for you to guess:"
 while my_game.is_won? == false && my_game.is_lost? == false
   puts my_game.secret_word.display
-  puts "Try guessing one of the letters"
+  puts "Try guessing one of the letters."
   answer = gets.chomp
+  while answer.length != 1
+    puts "Guess only one letter at a time!"
+    puts my_game.secret_word.display
+    answer = gets.chomp
+  end
   my_game.guess(answer)
 end
 if my_game.is_won?

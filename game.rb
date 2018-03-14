@@ -9,7 +9,7 @@ class Game
 
   def guess(letter)
     if @guessed_letters.include?(letter)
-      puts "You've already tried guessing this letter"
+      puts "You've already tried guessing this letter."
     elsif @secret_word.appears_in_word?(letter)
       puts "Yay, your secret word includes #{letter}!"
       idx_to_reveal = []
@@ -21,7 +21,7 @@ class Game
       end
     else
       @player.lose_a_life
-      puts "Sorry, no #{letter} in your secret word. You have #{player.lives} lives left"
+      puts "Sorry, no #{letter} in your secret word. You have #{player.lives} lives left."
     end
     @guessed_letters << letter
   end
