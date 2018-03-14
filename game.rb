@@ -17,7 +17,7 @@ class Game
         if letter == l
         idx_to_reveal << idx
         end
-        idx_to_reveal.each_with_index {|o, i| @secret_word.display[o]= letter}
+        idx_to_reveal.each {|num| @secret_word.display[num]= letter}
       end
     else
       @player.lose_a_life
